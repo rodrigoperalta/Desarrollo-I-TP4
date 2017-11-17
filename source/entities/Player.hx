@@ -1,8 +1,10 @@
 package entities;
-
 import entities.Player.States;
+import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.math.FlxPoint;
 import flixel.system.FlxAssets.FlxGraphicAsset;
+import flixel.util.FlxColor;
 
 /**
  * ...
@@ -18,11 +20,18 @@ import flixel.system.FlxAssets.FlxGraphicAsset;
 }
 class Player extends FlxSprite 
 {
+	private var _max:FlxPoint;
+	private var currentState(get, null):States;
+	
+
 
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset) 
 	{
 		super(X, Y, SimpleGraphic);
 		currentState = States.IDLE;
+		makeGraphic(10, 10, FlxColor.RED);
+		
+		
 		
 	}
 	
@@ -30,6 +39,8 @@ class Player extends FlxSprite
 	{
 		stateMachine();
 		super.update(elapsed);
+		
+		
 	
 	}
 	
@@ -40,15 +51,22 @@ class Player extends FlxSprite
 		{
 			case States.IDLE:
 				
-
-			case States.RUN:
-				
-
 			
+
+			case States.MOVE:
+						
 
 			
 
 		}
 	}
+	
+		
+	public function get_currentState():States 
+	{
+		return currentState;
+	}
+	
+	
 	
 }

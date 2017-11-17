@@ -1,5 +1,5 @@
 <level width="2000" height="2000">
   <Entities>
-    <Player id="0" x="992" y="1968" />
+    <Player id="0" x="48" y="176" />
   </Entities>
 </level>
