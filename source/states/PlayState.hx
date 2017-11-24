@@ -8,7 +8,8 @@ import flixel.FlxState;
 import flixel.addons.editors.ogmo.FlxOgmoLoader;
 import flixel.tile.FlxTilemap;
 import entities.Guide;
-
+import entities.HorizontalGuide;
+import entities.VerticalGuide;
 
 
 class PlayState extends FlxState
@@ -18,6 +19,8 @@ class PlayState extends FlxState
 	private var player:Player;
 	private var ref1:Player;
 	private var ref2:Player;
+	private var hG:HorizontalGuide;
+	private var vG:VerticalGuide;
 	private var hM:HorizontalMeter;
 	private var vM:VerticalMeter;
 	//private var guide:Guide;
@@ -31,7 +34,9 @@ class PlayState extends FlxState
 		ref1 = new Player(player.x + 10, player.y - 10);
 		ref2 = new Player(player.x - 10, player.y + 10);
 		hM = new HorizontalMeter(FlxG.width/2,0);
-		vM = new VerticalMeter(FlxG.width-50, FlxG.height/2);
+		vM = new VerticalMeter(FlxG.width - 50, FlxG.height / 2);
+		hG = new HorizontalGuide(0,0);
+		vG = new VerticalGuide(FlxG.width-50, 0);
 		//guide = new Guide(player.x, FlxG.height/2);
 		//tileMap = loader.loadTilemap(AssetPaths.tiles__png, 16, 16, "Tilesets");
 		
@@ -41,6 +46,8 @@ class PlayState extends FlxState
 		
 		//add(tileMap);
 		//add(guide);
+		add(hG);
+		add(vG);
 		add(hM);
 		add(vM);
 		add(ref1);
