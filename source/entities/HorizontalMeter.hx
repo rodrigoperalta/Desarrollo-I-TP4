@@ -11,17 +11,18 @@ import flixel.util.FlxColor;
  * @author Rodrigo Peralta
  */
 
-class HorizontalMeter extends FlxSprite
+class HorizontalMeter extends Meters
 {
-	
+
 	private var velX(get, null):Float;
-	
 
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
 	{
 		super(X, Y, SimpleGraphic);
-		makeGraphic(10, 10, FlxColor.GREEN);
+		makeGraphic(50, 50, FlxColor.GREEN);
 		velX = 0;
+		scrollFactor.x = 0;
+		scrollFactor.y = 0;
 
 	}
 
@@ -29,13 +30,20 @@ class HorizontalMeter extends FlxSprite
 	{
 		super.update(elapsed);
 		movement();
-		trace(velocity.x);
-		
 
 	}
 
 	private function movement():Void
 	{
+		
+		if (this.x > FlxG.width-this.width) 
+		{
+			velocity.x = 0;
+		}
+		if (this.x < 0) 
+		{
+			velocity.x = 0;
+		}
 		if (FlxG.keys.pressed.RIGHT)
 		{
 
@@ -73,11 +81,13 @@ class HorizontalMeter extends FlxSprite
 			}
 
 		}
+		
 
 	}
-	
-	public function get_velX():Float 
+
+	public function get_velX():Float
 	{
 		return velX;
 	}
+
 }
