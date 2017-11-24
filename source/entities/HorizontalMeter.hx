@@ -20,7 +20,7 @@ class HorizontalMeter extends Meters
 	{
 		super(X, Y, SimpleGraphic);
 		makeGraphic(50, 50, FlxColor.GREEN);
-		velX = 0;
+		acceleration.x = 3;
 		scrollFactor.x = 0;
 		scrollFactor.y = 0;
 
@@ -35,12 +35,12 @@ class HorizontalMeter extends Meters
 
 	private function movement():Void
 	{
-		
-		if (this.x > FlxG.width-this.width) 
+
+		if (this.x > FlxG.width-this.width)
 		{
 			velocity.x = 0;
 		}
-		if (this.x < 0) 
+		if (this.x < 0)
 		{
 			velocity.x = 0;
 		}
@@ -81,7 +81,6 @@ class HorizontalMeter extends Meters
 			}
 
 		}
-		
 
 	}
 

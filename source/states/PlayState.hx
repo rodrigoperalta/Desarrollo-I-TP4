@@ -52,22 +52,7 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		//player.getVel(hM.velocity.x, vM.velocity.y);
 		//guide.getPlayerPos(player.x, player.y);
-		if (hM.x<FlxG.width/2) 
-		{
-			player.setMovX(true);
-		}
-		if (hM.x>FlxG.width/2) 
-		{
-			player.setMovX(false);
-		}
-		if (vM.y<FlxG.height/2) 
-		{
-			player.setMovY(true);
-		}
-		if (vM.y>FlxG.height/2) 
-		{
-			player.setMovY(false);
-		}
+		setPlayerMov(hM, vM);
 	
 	}
 	
@@ -88,5 +73,24 @@ class PlayState extends FlxState
 		}
 	}
 	
+	private function setPlayerMov(hM:HorizontalMeter,vM:VerticalMeter):Void
+	{
+		if (hM.x<FlxG.width/2) 
+		{
+			player.setMovX(true);
+		}
+		if (hM.x>FlxG.width/2) 
+		{
+			player.setMovX(false);
+		}
+		if (vM.y<FlxG.height/2) 
+		{
+			player.setMovY(true);
+		}
+		if (vM.y>FlxG.height/2) 
+		{
+			player.setMovY(false);
+		}
+	}
 	
 }

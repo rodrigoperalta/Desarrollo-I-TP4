@@ -18,7 +18,7 @@ class VerticalMeter extends Meters
 	{
 		super(X, Y, SimpleGraphic);
 		makeGraphic(50, 50, FlxColor.YELLOW);
-		velY = 0;
+		acceleration.y = -3;
 		scrollFactor.y = 0;
 		scrollFactor.x = 0;
 
@@ -37,7 +37,7 @@ class VerticalMeter extends Meters
 		{
 			velocity.y = 0;
 		}
-		if (this.y < 0+this.height)
+		if (this.y < 0)
 		{
 			velocity.y = 0;
 		}
@@ -69,7 +69,7 @@ class VerticalMeter extends Meters
 
 				if (velocity.y>-20&&velocity.x>-20)
 				{
-					acceleration.y -= 30;
+					acceleration.y -= 20;
 				}
 
 				if (velocity.y < -100)
