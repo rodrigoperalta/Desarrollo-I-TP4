@@ -70,6 +70,8 @@ class PlayState extends FlxState
 		add(hM);
 		add(vM);
 		add(score);
+		
+		FlxG.sound.playMusic(AssetPaths.musicca__wav);
 
 		tileMap.setTileProperties(0, FlxObject.NONE);
 		tileMap.setTileProperties(1, FlxObject.NONE);
@@ -172,7 +174,10 @@ class PlayState extends FlxState
 	{
 		FlxG.camera.shake(0.01, 1);
 		obstaculos.remove(o, true);
+		FlxG.sound.play(AssetPaths.caer__wav);
 		player.die();
+		add(end);
+		
 	}
 
 	private function death():Void
@@ -189,6 +194,7 @@ class PlayState extends FlxState
 			vM.velocity.y = 0;
 			end.x = player.x-100;
 			end.y = player.y - 50;
+			FlxG.sound.play(AssetPaths.caer__wav);
 			add(end);
 
 		}
@@ -205,6 +211,7 @@ class PlayState extends FlxState
 			hM.acceleration.x = 0;
 			end.x = player.x-100;
 			end.y = player.y - 50;
+			FlxG.sound.play(AssetPaths.caer__wav);
 			add(end);
 
 		}

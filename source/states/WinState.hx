@@ -25,6 +25,7 @@ class WinState extends FlxState
 		var botonNuevoJuego = new FlxButton(x, 120, "Jugar!", nuevo);
 		var botonNuevoJuego2 = new FlxButton(x, 160, "Jugar!!!!", nuevo);
 		var botonNuevoJuego3 = new FlxButton(x, 200, "¡¡¡¡Jugar!!!!", nuevo);
+		FlxG.sound.pause();
 		add(texto);
 		add(texto2);
 		add(botonNuevoJuego);
