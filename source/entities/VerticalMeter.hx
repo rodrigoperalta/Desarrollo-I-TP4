@@ -17,8 +17,7 @@ class VerticalMeter extends Meters
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
 	{
 		super(X, Y, SimpleGraphic);
-		makeGraphic(50, 50, FlxColor.YELLOW);
-		acceleration.y = -3;
+		loadGraphic(AssetPaths.MedidorLateral__png, false, 56, 17, false);
 		scrollFactor.y = 0;
 		scrollFactor.x = 0;
 

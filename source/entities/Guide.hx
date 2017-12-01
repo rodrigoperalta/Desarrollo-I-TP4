@@ -23,7 +23,6 @@ class Guide extends FlxSprite
 	
 	override public function update(elapsed:Float):Void
 	{
-		this.x = playerX;
 		this.y = playerY;
 		super.update(elapsed);
 	}

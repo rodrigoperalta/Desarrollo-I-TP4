@@ -19,8 +19,7 @@ class HorizontalMeter extends Meters
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
 	{
 		super(X, Y, SimpleGraphic);
-		makeGraphic(50, 50, FlxColor.GREEN);
-		acceleration.x = 3;
+		loadGraphic(AssetPaths.MedidorSuperior__png, false, 17, 56, false);
 		scrollFactor.x = 0;
 		scrollFactor.y = 0;
 
@@ -30,6 +29,7 @@ class HorizontalMeter extends Meters
 	{
 		super.update(elapsed);
 		movement();
+	
 
 	}
 
@@ -44,7 +44,7 @@ class HorizontalMeter extends Meters
 		{
 			velocity.x = 0;
 		}
-		if (FlxG.keys.pressed.RIGHT)
+		if (FlxG.keys.pressed.D)
 		{
 
 			if (acceleration.x<50)
@@ -62,7 +62,7 @@ class HorizontalMeter extends Meters
 				}
 			}
 		}
-		if (FlxG.keys.pressed.LEFT)
+		if (FlxG.keys.pressed.A)
 		{
 			if (acceleration.x>-50)
 			{

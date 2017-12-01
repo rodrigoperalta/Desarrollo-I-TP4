@@ -15,7 +15,7 @@ class VerticalGuide extends FlxSprite
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset) 
 	{
 		super(X, Y, SimpleGraphic);
-		makeGraphic(50, FlxG.height, FlxColor.BLUE);
+		loadGraphic(AssetPaths.BarraLateral__png, false, 480, 56, false);
 		scrollFactor.y = 0;
 		scrollFactor.x = 0;
 		

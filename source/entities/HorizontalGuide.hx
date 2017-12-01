@@ -16,7 +16,7 @@ class HorizontalGuide extends FlxSprite
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset) 
 	{
 		super(X, Y, SimpleGraphic);
-		makeGraphic(FlxG.width, 50, FlxColor.BLUE);
+		loadGraphic(AssetPaths.BarraSuperior__png, false, 56, 640, false);
 		scrollFactor.y = 0;
 		scrollFactor.x = 0;
 	}
